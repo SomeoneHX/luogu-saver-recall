@@ -43,7 +43,7 @@ async function pagePaste(params) {
 
   try {
     const data = await api.get('/paste/query/' + id);
-    document.getElementById('paste-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updated_at || '');
+    document.getElementById('paste-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updatedAt || '');
     const avatar = document.getElementById('paste-avatar');
     if (data.author) {
       avatar.src = 'https://cdn.luogu.com.cn/upload/usericon/' + (data.author.id || 3) + '.png';

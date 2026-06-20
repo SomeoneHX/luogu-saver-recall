@@ -41,7 +41,7 @@ function renderResults(results) {
   }
   let html = '<div class="ui divided items">';
   results.forEach(function (item) {
-    html += '<div class="item"><div class="content"><a class="header" style="color:#1e70bf" href="/article/' + item.id + '">' + (item.title || '无标题') + '</a><div class="meta firacode"><span><i class="fa fa-hashtag"></i> ' + item.id + '</span><span><i class="fa fa-user"></i> UID: ' + (item.author_uid || '') + '</span><span><i class="fa fa-clock"></i> ' + (item.updated_at || '') + '</span></div></div></div>';
+    html += '<div class="item"><div class="content"><a class="header" style="color:#1e70bf" href="/article/' + item.id + '">' + (item.title || '无标题') + '</a><div class="meta firacode"><span><i class="fa fa-hashtag"></i> ' + item.id + '</span><span><i class="fa fa-user"></i> UID: ' + (item.authorId || '') + '</span><span><i class="fa fa-clock"></i> ' + (item.updatedAt || '') + '</span></div></div></div>';
   });
   html += '</div>';
   container.innerHTML = html;

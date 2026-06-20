@@ -44,7 +44,7 @@ async function pageUser(params) {
   try {
     const data = await api.get('/user/query/' + id);
     document.getElementById('user-title').textContent = (data.name || '用户 ' + id) + ' 的个人主页';
-    document.getElementById('user-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updated_at || '');
+    document.getElementById('user-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updatedAt || '');
     const avatar = document.getElementById('user-avatar');
     avatar.src = 'https://cdn.luogu.com.cn/upload/usericon/' + (data.uid || id || 3) + '.png';
     const linkEl = document.getElementById('user-link');

@@ -50,7 +50,7 @@ async function pageArticle(params) {
   try {
     const data = await api.get('/article/query/' + id);
     document.getElementById('article-title').textContent = data.title || '无标题';
-    document.getElementById('article-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updated_at || '');
+    document.getElementById('article-meta').innerHTML = '<i class="ui icon calendar colored"></i> 最后更新于 ' + (data.updatedAt || '');
     const avatar = document.getElementById('article-avatar');
     if (data.author) {
       avatar.src = 'https://cdn.luogu.com.cn/upload/usericon/' + (data.author.id || 3) + '.png';
