@@ -12,6 +12,7 @@ async function pageRecent() {
       </div>
     </div>
     <div class="ui grid" id="recent-list"></div>`;
+  document.getElementById('recent-list').innerHTML = '<div class="ui active centered inline loader"></div>';
 
   try {
     const data = await api.get('/article/recent?count=20');
