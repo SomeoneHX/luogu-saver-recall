@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   registerRoute('/task/:id', pageTask);
   registerRoute('/admin', pageAdmin);
   registerRoute('/settings', pageSettings);
+  registerRoute('/token/apply', pageToken);
   registerRoute('/about', pageAbout);
   registerRoute('/legal/privacy', pageLegal);
   registerRoute('/legal/disclaimer', pageLegal);

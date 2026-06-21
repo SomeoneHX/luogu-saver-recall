@@ -10,10 +10,10 @@ function login() {
   Swal.fire({
     title: '请输入 Token',
     input: 'text',
-    inputPlaceholder: '输入你的登录凭据',
-    confirmButtonText: '登录',
+    inputPlaceholder: '输入你的登录凭据喵！♥️',
+    confirmButtonText: '就是这个喵！',
     showCancelButton: true,
-    cancelButtonText: '取消',
+    cancelButtonText: '不是这个喵...',
     preConfirm: async function (token) {
       if (!token) { Swal.showValidationMessage('Token 不能为空'); return; }
       localStorage.setItem('auth_token', token);

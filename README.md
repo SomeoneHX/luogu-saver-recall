@@ -201,6 +201,7 @@ server {
 | `/statistic` | 队列统计 | 实时队列状态看板 |
 | `/admin` | 管理后台 | 队列监控、公告管理 |
 | `/settings` | 设置 | 账号信息、登出 |
+| `/token/apply` | Token 申请 | Token 获取指南 |
 | `/about` | 关于 | 项目介绍、数据统计 |
 | `/legal/privacy` | 隐私协议 | 隐私保护政策 |
 | `/legal/disclaimer` | 免责声明 | 免责条款 |
@@ -266,6 +267,7 @@ LGS-legacy-client/
 │   │   │   │   ├── admin.js        # 管理后台
 │   │   │   │   ├── settings.js     # 设置
 │   │   │   │   ├── about.js        # 关于
+│   │   │   │   ├── token.js        # Token 申请
 │   │   │   │   └── legal.js        # 法律页面
 │   │   │   ├── app.js              # 应用入口，路由注册
 │   │   │   ├── render.js           # 渲染引擎（KaTeX + Shiki）
