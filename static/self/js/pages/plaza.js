@@ -28,7 +28,7 @@ async function loadMoreArticles() {
   if (isLoading || !hasMore) return;
   isLoading = true;
   const loadMoreEl = document.getElementById('plaza-load-more');
-  loadMoreEl.innerHTML = '<div class="sixteen wide column" style="text-align:center;padding:20px 0;"><div class="ui active inline mini loader"></div> 加载中...</div>';
+  loadMoreEl.innerHTML = '<div class="sixteen wide column" style="text-align:center;padding:20px 0;"><div class="ui active inline loader">';
 
   try {
     const excludeIds = loadedArticleIds.join(',');
