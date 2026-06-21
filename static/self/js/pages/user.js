@@ -53,10 +53,10 @@ async function pageUser(params) {
     linkEl.textContent = data.name || '用户 ' + id;
     document.getElementById('user-original-link').href = 'https://www.luogu.com.cn/user/' + (data.uid || id);
     document.getElementById('user-original-link').style.display = '';
-    if (data.introduction || data.content) {
-      document.getElementById('markdown-content').value = data.introduction || data.content || '';
+    if (data.introduction) {
+      document.getElementById('markdown-content').value = data.introduction;
       document.getElementById('user-copy-btn').style.display = '';
-      document.getElementById('render-content').innerHTML = data.renderedContent || '<div style="text-align:center;padding:50px 0;">暂无介绍</div>';
+      document.getElementById('render-content').innerHTML = data.renderedIntroduction || '<div style="text-align:center;padding:50px 0;">暂无介绍</div>';
     } else {
       document.getElementById('render-content').innerHTML = '<div style="text-align: center; padding: 50px 0;"><i class="ui icon info circle" style="font-size: 3rem; color: gray;"></i><div style="font-size: 1.5rem; color: gray; margin-top: 10px;">尚未保存内容</div><div style="margin-top: 10px;">请点击上方的"更新资料"按钮以保存用户资料</div></div>';
     }
