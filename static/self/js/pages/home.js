@@ -4,7 +4,7 @@ async function pageHome() {
     <div class="ui grid">
       <div class="sixteen wide column">
         <div class="card shadow" style="background: linear-gradient(135deg, #e0e8ff 0%, #d6e3ff 100%);">
-          <h1 class="ui center aligned header" style="font-size: 2.5em; color: #667eea;"><i class="ui icon bookmark"></i> 洛谷保存站</h1>
+          <h1 class="ui center aligned header" style="font-size: 2.5em; color: #667eea;"><i class="ui icon bookmark"></i> 洛谷保存站 - 追忆版</h1>
           <p style="color: gray; font-size: 1.2em; text-align: center;">
             Save everything, keep it alive.<br/>保存一切，让记忆常在。
           </p>

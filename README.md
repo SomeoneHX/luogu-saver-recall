@@ -1,6 +1,6 @@
-# 洛谷保存站 · 旧版前端
+# 洛谷保存站 - 追忆版
 
-<h3 align="center">LGS Legacy Client</h3>
+<h3 align="center">Luogu Saver Recall</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="License">
@@ -38,13 +38,13 @@
 
 ```
 luogu-saver (旧版全栈)
-    └── 前端部分被重新实现为 → LGS-legacy-client (本仓库)
+    └── 前端部分被重新实现为 → luogu-saver-recall (本仓库)
                                     └── 后端 API 对接 → luogu-saver-next (新版 API)
 ```
 
 | 项目 | 仓库 | 说明 |
 |------|------|------|
-| **LGS-legacy-client** | [SomeoneHX/LGS-legacy-client](https://github.com/SomeoneHX/LGS-legacy-client) | **本仓库**。纯静态前端 SPA，保留旧版 UI 风格，连接新版 API |
+| **luogu-saver-recall** | [SomeoneHX/luogu-saver-recall](https://github.com/SomeoneHX/luogu-saver-recall) | **本仓库**。纯静态前端 SPA，保留旧版 UI 风格，连接新版 API |
 | **luogu-saver** | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 旧版保存站。Express 5 + Nunjucks 全栈应用，目前已不维护 |
 | **luogu-saver-next** | [Ark-Aak/luogu-saver-next](https://github.com/Ark-Aak/luogu-saver-next) | 新版保存站。Koa 3 + Vue 3 前后端分离，提供全面 API |
 
@@ -134,8 +134,8 @@ luogu-saver (旧版全栈)
 
 ```bash
 # 克隆仓库
-git clone https://github.com/SomeoneHX/LGS-legacy-client.git
-cd LGS-legacy-client
+git clone https://github.com/SomeoneHX/luogu-saver-recall.git
+cd luogu-saver-recall
 
 # 启动开发服务器
 npx serve -s . -p 55087
@@ -238,7 +238,7 @@ server {
 ## 项目结构
 
 ```
-LGS-legacy-client/
+luogu-saver-recall/
 ├── index.html                  # SPA 入口页面
 ├── auth-callback.html          # OAuth 登录回调处理
 ├── favicon.ico                 # 站点图标
@@ -299,7 +299,7 @@ LGS-legacy-client/
 |------|----------|------|
 | 洛谷保存站（旧版） | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 原版保存站，Express 5 + Nunjucks 全栈应用 |
 | 洛谷保存站（新版） | [Ark-Aak/luogu-saver-next](https://github.com/Ark-Aak/luogu-saver-next) | 新版保存站，Koa 3 + Vue 3 前后端分离 |
-| 本仓库 | [SomeoneHX/LGS-legacy-client](https://github.com/SomeoneHX/LGS-legacy-client) | 旧版前端改装版，纯静态 SPA 对接新版 API |
+| 本仓库 | [SomeoneHX/luogu-saver-recall](https://github.com/SomeoneHX/luogu-saver-recall) | 追忆版，纯静态 SPA 对接新版 API |
 
 ---
 
