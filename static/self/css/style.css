@@ -421,3 +421,48 @@ code:not(pre.shiki > code) {
     font-size: 0.85em !important;
     color: #e11d48 !important;
 }
+
+/* Judgement page */
+.judgement-user-name {
+    font-size: 1.15em;
+    font-weight: 700;
+}
+.judgement-meta {
+    margin-top: 8px;
+    color: #6c757d;
+}
+.judgement-permissions {
+    margin-top: 12px;
+}
+.judgement-permissions ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0.5rem 0;
+}
+.judgement-permissions li {
+    margin: 0.5rem 0;
+    color: #495057;
+    font-size: 1.05em;
+}
+.permission-badge {
+    background: #e9ecef;
+    color: #495057;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+.permission-granted {
+    background: #d1edff;
+    color: #0c5aa0;
+}
+.permission-revoked {
+    background: #f8d7da;
+    color: #721c24;
+}
+.judgement-reason {
+    margin-top: 12px;
+    color: #495057;
+    font-size: 1.05em;
+    line-height: 1.6;
+}

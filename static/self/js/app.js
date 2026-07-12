@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   if (daysEl) daysEl.textContent = daysRunning;
 
   registerRoute('/', pageHome);
+  registerRoute('/judgement', pageJudgement);
   registerRoute('/article/recent', pageRecent);
   registerRoute('/plaza', pagePlaza);
   registerRoute('/article/:id', pageArticle);
