@@ -95,6 +95,14 @@ luogu-saver-legacy (旧版全栈)
 | 队列监控 | 查看各队列等待、活跃、完成、失败任务数 |
 | 公告管理 | 编辑站点公告内容，控制启用/关闭 |
 
+### 陶片放逐
+
+| 功能 | 说明 |
+|------|------|
+| 权限变更记录 | 查看洛谷管理员权限变更日志（封号、禁言、禁止私信等） |
+| 条件筛选 | 支持按 UID、用户名搜索，可按权限值过滤 |
+| 分页浏览 | 支持 10/20/30/40/50 条每页切换与数字分页 |
+
 ### 其他
 
 | 功能 | 说明 |
@@ -197,6 +205,7 @@ server {
 | `/search` | 搜索页面 | 全文搜索已存档文章 |
 | `/plaza` | 文章广场 | 发现文章（加载更多） |
 | `/article/recent` | 最近更新 | 最近 20 篇更新文章 |
+| `/judgement` | 陶片放逐 | 查看权限变更管理日志 |
 | `/task/:id` | 任务追踪 | 查看存档工作流进度 |
 | `/statistic` | 队列统计 | 实时队列状态看板 |
 | `/admin` | 管理后台 | 队列监控、公告管理 |
@@ -233,6 +242,14 @@ server {
 | PUT | `/admin/announcement` | 更新公告配置（管理员） |
 | WS | `/websocket` (Socket.IO) | 实时队列状态推送 |
 
+> 以下端点由独立服务 [quanac-lcx/luogu-judgement-saver](https://github.com/quanac-lcx/luogu-judgement-saver) 提供（`jdmt.luogu.me`）：
+
+| 方法 | 端点 | 用途 |
+|------|------|------|
+| GET | `jdmt.luogu.me/api/judgement` | 陶片放逐记录（分页、筛选） |
+| GET | `jdmt.luogu.me/api/stats` | 陶片放逐统计信息 |
+| GET | `jdmt.luogu.me/api/logs` | 抓取日志 |
+
 ---
 
 ## 项目结构
@@ -256,6 +273,7 @@ luogu-saver-recall/
 │   │   │   │   └── router.js       # SPA 路由
 │   │   │   ├── pages/
 │   │   │   │   ├── home.js         # 首页
+│   │   │   │   ├── judgement.js    # 陶片放逐
 │   │   │   │   ├── article.js      # 文章详情
 │   │   │   │   ├── paste.js        # 剪贴板详情
 │   │   │   │   ├── user.js         # 用户主页
@@ -272,6 +290,8 @@ luogu-saver-recall/
 │   │   │   ├── app.js              # 应用入口，路由注册
 │   │   │   ├── render.js           # 渲染引擎（KaTeX + Shiki）
 │   │   │   ├── utils.js            # URL 解析工具
+│   │   │   ├── propaganda.js       # 广告轮播
+│   │   │   ├── deletion_request.js # 删除请求弹窗
 │   │   │   └── display_utils.js    # 显示/剪贴板工具
 │   │   ├── css/
 │   │   │   ├── style.css           # 主样式
@@ -299,6 +319,7 @@ luogu-saver-recall/
 |------|----------|------|
 | 洛谷保存站（旧版） | [laikit-dev/luogu-saver-legacy](https://github.com/laikit-dev/luogu-saver-legacy) | 原版保存站，Express 5 + Nunjucks 全栈应用 |
 | 洛谷保存站（新版） | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 新版保存站，Koa 3 + Vue 3 前后端分离 |
+| 洛谷陶片保存站 | [quanac-lcx/luogu-judgement-saver](https://github.com/quanac-lcx/luogu-judgement-saver) | 陶片放逐数据抓取与独立 API 服务 |
 | 本仓库 | [SomeoneHX/luogu-saver-recall](https://github.com/SomeoneHX/luogu-saver-recall) | 追忆版，纯静态 SPA 对接新版 API |
 
 ---
