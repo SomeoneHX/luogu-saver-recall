@@ -31,8 +31,8 @@ async function pageAbout() {
           <p>jQuery · Semantic UI · KaTeX · Shiki · Font Awesome</p>
           <h3 class="ui header">链接</h3>
           <p><a href="https://github.com/SomeoneHX/luogu-saver-recall" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub 仓库</a></p>
-          <p><a href="https://github.com/laikit-dev/luogu-saver" target="_blank" class="footer-link"><i class="fab fa-github"></i> 旧版保存站 GitHub 仓库</a></p>
-          <p><a href="https://github.com/Ark-Aak/luogu-saver-next" target="_blank" class="footer-link"><i class="fab fa-github"></i> 新版保存站 GitHub 仓库</a></p>
+          <p><a href="https://github.com/laikit-dev/luogu-saver-legacy" target="_blank" class="footer-link"><i class="fab fa-github"></i> 旧版保存站 GitHub 仓库</a></p>
+          <p><a href="https://github.com/laikit-dev/luogu-saver" target="_blank" class="footer-link"><i class="fab fa-github"></i> 新版保存站 GitHub 仓库</a></p>
         </div>
       </div>
     </div>`;

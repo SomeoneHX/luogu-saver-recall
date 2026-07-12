@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  将旧版 <a href="https://github.com/laikit-dev/luogu-saver">洛谷保存站</a> 的前端界面，连接上新版 <a href="https://github.com/Ark-Aak/luogu-saver-next">Luogu Saver Next</a> API 的成品。<br>
+  将旧版 <a href="https://github.com/laikit-dev/luogu-saver-legacy">洛谷保存站</a> 的前端界面，连接上新版 <a href="https://github.com/laikit-dev/luogu-saver">Luogu Saver Next</a> API 的成品。<br>
   保留旧版的使用体验，同时享受新版后端的全部能力。
 </p>
 
@@ -37,18 +37,18 @@
 本项目涉及三个仓库，分别对应洛谷保存站发展的不同阶段：
 
 ```
-luogu-saver (旧版全栈)
+luogu-saver-legacy (旧版全栈)
     └── 前端部分被重新实现为 → luogu-saver-recall (本仓库)
-                                    └── 后端 API 对接 → luogu-saver-next (新版 API)
+                                    └── 后端 API 对接 → luogu-saver (新版 API)
 ```
 
 | 项目 | 仓库 | 说明 |
 |------|------|------|
 | **luogu-saver-recall** | [SomeoneHX/luogu-saver-recall](https://github.com/SomeoneHX/luogu-saver-recall) | **本仓库**。纯静态前端 SPA，保留旧版 UI 风格，连接新版 API |
-| **luogu-saver** | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 旧版保存站。Express 5 + Nunjucks 全栈应用，目前已不维护 |
-| **luogu-saver-next** | [Ark-Aak/luogu-saver-next](https://github.com/Ark-Aak/luogu-saver-next) | 新版保存站。Koa 3 + Vue 3 前后端分离，提供全面 API |
+| **luogu-saver-legacy** | [laikit-dev/luogu-saver-legacy](https://github.com/laikit-dev/luogu-saver-legacy) | 旧版保存站。Express 5 + Nunjucks 全栈应用，目前已不维护 |
+| **luogu-saver** | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 新版保存站。Koa 3 + Vue 3 前后端分离，提供全面 API |
 
-旧版 luogu-saver 采用的是服务端渲染的全栈架构，而新版 luogu-saver-next 采用前后端分离模式并提供了完善的 API。本仓库将旧版前端界面移植为纯静态 SPA，直接调用新版后端 API，在保留经典交互体验的同时复用新版后端的存档能力。
+旧版 luogu-saver-legacy 采用的是服务端渲染的全栈架构，而新版 luogu-saver 采用前后端分离模式并提供了完善的 API。本仓库将旧版前端界面移植为纯静态 SPA，直接调用新版后端 API，在保留经典交互体验的同时复用新版后端的存档能力。
 
 ---
 
@@ -128,7 +128,7 @@ luogu-saver (旧版全栈)
 ### 前置要求
 
 - Node.js >= 18（用于 `npx serve`）
-- 一个运行中的 [luogu-saver-next](https://github.com/Ark-Aak/luogu-saver-next) 后端实例
+- 一个运行中的 [luogu-saver-next](https://github.com/laikit-dev/luogu-saver) 后端实例
 
 ### 安装与运行
 
@@ -297,8 +297,8 @@ luogu-saver-recall/
 
 | 项目 | 仓库链接 | 说明 |
 |------|----------|------|
-| 洛谷保存站（旧版） | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 原版保存站，Express 5 + Nunjucks 全栈应用 |
-| 洛谷保存站（新版） | [Ark-Aak/luogu-saver-next](https://github.com/Ark-Aak/luogu-saver-next) | 新版保存站，Koa 3 + Vue 3 前后端分离 |
+| 洛谷保存站（旧版） | [laikit-dev/luogu-saver-legacy](https://github.com/laikit-dev/luogu-saver-legacy) | 原版保存站，Express 5 + Nunjucks 全栈应用 |
+| 洛谷保存站（新版） | [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver) | 新版保存站，Koa 3 + Vue 3 前后端分离 |
 | 本仓库 | [SomeoneHX/luogu-saver-recall](https://github.com/SomeoneHX/luogu-saver-recall) | 追忆版，纯静态 SPA 对接新版 API |
 
 ---
@@ -319,7 +319,7 @@ luogu-saver-recall/
 
 本项目基于 **GNU Affero General Public License v3.0** (AGPL-3.0) 开源。完整的许可证文本见 [LICENSE](./LICENSE)。
 
-本程序修改自 [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver)，遵循 AGPL-3.0 协议。
+本程序修改自 [laikit-dev/luogu-saver](https://github.com/laikit-dev/luogu-saver-legacy)，遵循 AGPL-3.0 协议。
 
 ---
 
