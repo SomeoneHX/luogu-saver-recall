@@ -47,6 +47,12 @@ async function pageHome() {
               <div style="font-size: 1.2rem; margin-top: 12px;">剪贴板</div>
             </div>
           </div>
+          <div class="row">
+            <div class="card propaganda shadow" id="propaganda">
+              <button class="ad-nav-control prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="ad-nav-control next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>`;
@@ -90,6 +96,8 @@ async function pageHome() {
   } catch (err) {
     console.error('Home data fetch failed:', err);
   }
+
+  initPropaganda();
 }
 
 async function handleSaveClick() {

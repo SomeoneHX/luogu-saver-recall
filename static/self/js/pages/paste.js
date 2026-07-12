@@ -29,6 +29,9 @@ async function pagePaste(params) {
               <a  id="save-btn" class="ui positive button">
                 <i class="ui icon redo alternate"></i> 更新内容
               </a>
+              <a id="request-deletion-btn" class="ui red button" style="display:none;">
+                <i class="ui icon trash alternate"></i> 申请删除
+              </a>
             </div>
           </div>
         </div>
@@ -57,6 +60,7 @@ async function pagePaste(params) {
       document.getElementById('paste-original-link').style.display = '';
       document.getElementById('paste-original-link').href = 'https://www.luogu.com/paste/' + id;
       document.getElementById('paste-copy-btn').style.display = '';
+      document.getElementById('request-deletion-btn').style.display = '';
       document.getElementById('render-content').innerHTML = data.renderedContent || '<div style="text-align:center;padding:50px 0;"><i class="ui icon info circle" style="font-size:3rem;color:gray;"></i><div style="font-size:1.5rem;color:gray;margin-top:10px;">暂无渲染内容</div></div>';
     } else {
       document.getElementById('render-content').innerHTML = '<div style="text-align: center; padding: 50px 0;"><i class="ui icon info circle" style="font-size: 3rem; color: gray;"></i><div style="font-size: 1.5rem; color: gray; margin-top: 10px;">尚未保存内容</div><div style="margin-top: 10px;">请点击上方的"更新内容"按钮以保存剪贴板内容</div></div>';
@@ -93,6 +97,10 @@ async function pagePaste(params) {
     } catch (err) {
       Swal.fire('请求失败', err.message || '网络错误', 'error');
     }
+  });
+
+  document.getElementById('request-deletion-btn')?.addEventListener('click', function () {
+    requestDeletion('paste', id);
   });
 
   setTimeout(function () {
