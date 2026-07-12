@@ -28,10 +28,10 @@ function initPropaganda() {
       const slide = document.createElement('div');
       slide.className = 'ad-slide';
       slide.dataset.imageUrl = ad.imageUrl;
-      slide.innerHTML = `
-        <a href="${ad.targetUrl}" target="_blank" rel="noopener noreferrer" class="propaganda-link" aria-label="${ad.altText}"></a>
-        <div class="ad-description">${ad.altText}</div>
-      `;
+      const linkHtml = ad.targetUrl
+        ? `<a href="${ad.targetUrl}" target="_blank" rel="noopener noreferrer" class="propaganda-link" aria-label="${ad.altText}"></a>`
+        : '';
+      slide.innerHTML = `${linkHtml}<div class="ad-description">${ad.altText}</div>`;
       ads.insertBefore(slide, prevBtn);
     });
     showAd(0);
