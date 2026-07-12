@@ -64,7 +64,10 @@ async function loadStats() {
       var el = document.getElementById('j-stats');
       if (el) el.textContent = '共 ' + r.data.total_judgements + ' 条记录 · ' + r.data.total_fetch_logs + ' 次抓取';
     }
-  } catch (e) { /* ignore */ }
+  } catch (e) {
+    var el = document.getElementById('j-stats');
+    if (el) el.textContent = '统计信息获取失败（CORS 跨域限制或网络不可用）';
+  }
 }
 
 async function loadJudgements(page) {
@@ -127,7 +130,12 @@ async function loadJudgements(page) {
     c.innerHTML = html;
     renderPagination(r.pagination);
   } catch (e) {
-    c.innerHTML = '<div class="sixteen wide column"><div class="card shadow outline"><div style="text-align:center;padding:50px 0;"><i class="ui icon warning circle" style="font-size:3rem;color:red;"></i><div style="font-size:1.5rem;color:gray;margin-top:10px;">网络请求失败：' + jEscape(e.message || '未知错误') + '</div></div></div></div>';
+    var msg = '请求失败：' + jEscape(e.message || '未知错误');
+    var testUrl = JUDGEMENT_API + '/judgement?page=1&limit=1';
+    msg += '<br><br><span style="font-size:0.85rem;color:#888;">可能原因：<b>跨域请求被浏览器拦截（CORS）</b>或 jdmt 后端服务暂不可用。<br>';
+    msg += '您可直接访问此链接测试（浏览器打开若返回 JSON 则为 CORS 问题）：<br>';
+    msg += '<a href="' + testUrl + '" target="_blank" style="font-size:0.8rem;word-break:break-all;">' + jEscape(testUrl) + '</a></span>';
+    c.innerHTML = '<div class="sixteen wide column"><div class="card shadow outline"><div style="text-align:center;padding:40px 0;"><i class="ui icon warning circle" style="font-size:3rem;color:#d03050;"></i><div style="font-size:1.1rem;color:#495057;margin-top:10px;">' + msg + '</div></div></div></div>';
   }
 }
 
