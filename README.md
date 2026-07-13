@@ -349,7 +349,7 @@ luogu-saver-recall/
 ### 原保存站开发者
 
 - [Federico2903](https://github.com/Federico2903)
-- [Murasame](https://github.com/Kaguya-chan)
+- [Murasame](https://github.com/CuteMurasame)
 - [quanac-lcx](https://github.com/quanac-lcx)
 
 ### 本项目开发者
