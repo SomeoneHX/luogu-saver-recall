@@ -81,6 +81,12 @@ async function pageTask(params) {
 
       const tasks = data.tasks || [];
 
+      if (!targetOid && tasks.length > 0) {
+        for (const t of tasks) {
+          if (t.target) { targetOid = t.target; break; }
+        }
+      }
+
       function buildChildrenMap(tasks) {
         const m = {};
         for (const t of tasks) {
@@ -191,7 +197,7 @@ async function pageTask(params) {
       if (targetType === 'article') navigate('/article/' + targetOid);
       else if (targetType === 'paste') navigate('/paste/' + targetOid);
       else if (targetType === 'user') navigate('/user/' + targetOid);
-      else navigate('/');
+      else navigate('/article/' + targetOid);
     }
   });
 
