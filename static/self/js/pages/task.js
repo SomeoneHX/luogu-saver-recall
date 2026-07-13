@@ -16,6 +16,7 @@ async function pageTask(params) {
             <div><strong>状态</strong> <span id="task-status" class="ui label blue">Pending</span></div>
             <div><strong>创建</strong> <span id="task-created-at" style="color: gray;">-</span></div>
             <div><strong>更新</strong> <span id="task-updated-at" style="color: gray;">-</span></div>
+            <div><strong>类型</strong> <span id="task-type" style="color: gray;">-</span></div>
             <div>
               <button id="goto-btn" class="ui mini positive button" disabled><i class="ui icon paper plane"></i> 跳转</button>
               <button id="retry-btn" class="ui mini teal button" style="display:none;"><i class="ui icon redo alternate"></i> 重试</button>
@@ -81,10 +82,10 @@ async function pageTask(params) {
 
       const tasks = data.tasks || [];
 
-      if (!targetOid && tasks.length > 0) {
-        for (const t of tasks) {
-          if (t.target) { targetOid = t.target; break; }
-        }
+      const saveTask = tasks.find(t => (t.taskName || t.jobName || t.name) === 'save');
+      if (saveTask) {
+        const label = { 'article': '专栏保存', 'paste': '剪贴板保存' }[saveTask.target] || saveTask.target;
+        document.getElementById('task-type').textContent = label;
       }
 
       function buildChildrenMap(tasks) {
@@ -197,7 +198,7 @@ async function pageTask(params) {
       if (targetType === 'article') navigate('/article/' + targetOid);
       else if (targetType === 'paste') navigate('/paste/' + targetOid);
       else if (targetType === 'user') navigate('/user/' + targetOid);
-      else navigate('/article/' + targetOid);
+      else navigate('/');
     }
   });
 
