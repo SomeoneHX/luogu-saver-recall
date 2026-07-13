@@ -96,6 +96,12 @@ async function pageArticle(params) {
     container.style.minHeight = 'auto';
     if (window.$ && $(content).transition) $(content).transition('fade in');
     if (typeof renderAll === 'function') renderAll();
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(location.hash.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
   }
 
   document.getElementById('save-btn')?.addEventListener('click', async function () {

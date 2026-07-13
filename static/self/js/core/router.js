@@ -61,7 +61,19 @@ function initRouter() {
     const a = e.target.closest('a');
     if (!a) return;
     const href = a.getAttribute('href');
-    if (!href || href.startsWith('http') || href.startsWith('//') || href.startsWith('#') || a.hasAttribute('target') || a.hasAttribute('download') || 'noSpa' in a.dataset) return;
+    if (!href || href.startsWith('http') || href.startsWith('//') || a.hasAttribute('target') || a.hasAttribute('download') || 'noSpa' in a.dataset) return;
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      history.replaceState(null, '', location.pathname + location.search + href);
+      const id = href.slice(1);
+      if (id) {
+        const el = document.getElementById(id) || document.getElementsByName(id)[0];
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
     e.preventDefault();
     navigate(href);
   });
