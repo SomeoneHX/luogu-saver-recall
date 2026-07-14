@@ -159,16 +159,16 @@ function renderPagination(pagination) {
   var html = '<div class="card shadow" style="text-align:center;"><div class="ui pagination menu">';
 
   if (current > 1) {
-    html += '<a class="item" href="javascript:void(0)" onclick="loadJudgements(' + (current - 1) + ')"><i class="left chevron icon"></i></a>';
+    html += '<a class="item" onclick="loadJudgements(' + (current - 1) + ')"><i class="left chevron icon"></i></a>';
   }
 
   for (var i = startPage; i <= endPage; i++) {
     var active = i === current ? ' active' : '';
-    html += '<a class="item' + active + '" href="javascript:void(0)" onclick="loadJudgements(' + i + ')">' + i + '</a>';
+    html += '<a class="item' + active + '" onclick="loadJudgements(' + i + ')">' + i + '</a>';
   }
 
   if (current < total) {
-    html += '<a class="item" href="javascript:void(0)" onclick="loadJudgements(' + (current + 1) + ')"><i class="right chevron icon"></i></a>';
+    html += '<a class="item" onclick="loadJudgements(' + (current + 1) + ')"><i class="right chevron icon"></i></a>';
   }
 
   html += '</div></div>';
@@ -184,7 +184,7 @@ function changePerPage(value) {
 async function pageJudgement() {
   var el = document.getElementById('page-content');
   el.innerHTML =
-    '<div class="ui grid"><div class="sixteen wide column"><div class="card shadow"><h1 class="ui center aligned header"><span><i class="ui gavel icon colored"></i> 陶片放逐</span><div class="sub header" style="margin-top:10px;"><p>此处公布近期涉及到用户权限变更（即封号、禁言、禁止私信）的管理日志，以提升管理流程透明度，以及引起部分用户警示。</p><p style="color:#888;font-size:.85rem;margin-top:6px;" id="j-stats">加载中…</p></div></h1><div style="text-align:center;"><a href="javascript:void(0)" id="save-btn" class="ui blue button" title="点击更新陶片放逐记录"><i class="ui icon sync alternate"></i> 更新陶片放逐记录</a><a href="https://www.luogu.com.cn/judgement" target="_blank" class="ui green button"><i class="ui icon code"></i> 查看原网页</a></div></div></div></div>' +
+    '<div class="ui grid"><div class="sixteen wide column"><div class="card shadow"><h1 class="ui center aligned header"><span><i class="ui gavel icon colored"></i> 陶片放逐</span><div class="sub header" style="margin-top:10px;"><p>此处公布近期涉及到用户权限变更（即封号、禁言、禁止私信）的管理日志，以提升管理流程透明度，以及引起部分用户警示。</p><p style="color:#888;font-size:.85rem;margin-top:6px;" id="j-stats">加载中…</p></div></h1><div style="text-align:center;"><a id="save-btn" class="ui blue button" title="点击更新陶片放逐记录"><i class="ui icon sync alternate"></i> 更新陶片放逐记录</a><a href="https://www.luogu.com.cn/judgement" target="_blank" class="ui green button"><i class="ui icon code"></i> 查看原网页</a></div></div></div></div>' +
     '<div class="ui grid"><div class="sixteen wide column"><div class="ui form"><div class="inline fields"><label>每页显示</label><div class="ui selection dropdown" id="per-page-dropdown" style="width:100px;min-width:100px;"><input type="hidden" name="perPage" value="' + jLimit + '"><i class="dropdown icon"></i><div class="default text">选择每页条数</div><div class="menu"><div class="item" data-value="10">10 条</div><div class="item" data-value="20">20 条</div><div class="item" data-value="30">30 条</div><div class="item" data-value="40">40 条</div><div class="item" data-value="50">50 条</div></div></div></div></div></div></div>' +
     '<div class="ui grid" id="j-cards"><div class="sixteen wide column"><div style="text-align:center;padding:40px 0;"><div class="ui active centered inline loader"></div></div></div></div>' +
     '<div id="j-pagination"></div>';
